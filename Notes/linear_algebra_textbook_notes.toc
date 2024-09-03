@@ -1,0 +1,44 @@
+\contentsline {chapter}{\numberline {1}Vector Spaces}{3}{}%
+\contentsline {section}{\numberline {1.1}Complex Numbers}{3}{}%
+\contentsline {section}{\numberline {1.2}Vector spaces}{3}{}%
+\contentsline {section}{\numberline {1.3}Properties of vector spaces}{4}{}%
+\contentsline {section}{\numberline {1.4}Subspaces}{4}{}%
+\contentsline {section}{\numberline {1.5}Sums and direct sums}{4}{}%
+\contentsline {chapter}{\numberline {2}Finite dimensional vector spaces}{5}{}%
+\contentsline {section}{\numberline {2.1}Span and linear independence}{5}{}%
+\contentsline {section}{\numberline {2.2}Bases}{5}{}%
+\contentsline {section}{\numberline {2.3}Dimension}{6}{}%
+\contentsline {chapter}{\numberline {3}Linear Maps}{7}{}%
+\contentsline {section}{\numberline {3.1}Definition of linear map}{7}{}%
+\contentsline {section}{\numberline {3.2}Null spaces, ranges, injectivity and surjectivity}{8}{}%
+\contentsline {section}{\numberline {3.3}Matrix of a linear map}{9}{}%
+\contentsline {subsection}{\numberline {3.3.1}Vector space of matrices}{9}{}%
+\contentsline {section}{\numberline {3.4}Invertibility}{10}{}%
+\contentsline {chapter}{\numberline {4}Polynomials}{12}{}%
+\contentsline {section}{\numberline {4.1}Degree}{12}{}%
+\contentsline {section}{\numberline {4.2}Complex Coefficients}{13}{}%
+\contentsline {section}{\numberline {4.3}Complex Numbers}{13}{}%
+\contentsline {section}{\numberline {4.4}Real Coefficients}{14}{}%
+\contentsline {chapter}{\numberline {5}Eigenvalues and eigenvectors}{15}{}%
+\contentsline {section}{\numberline {5.1}Invariant subspaces}{15}{}%
+\contentsline {subsection}{\numberline {5.1.1}One dimensional invariant subspaces}{15}{}%
+\contentsline {section}{\numberline {5.2}Polynomials applied to operators}{16}{}%
+\contentsline {section}{\numberline {5.3}Upper triangular matrices}{16}{}%
+\contentsline {section}{\numberline {5.4}Diagonal matrices}{18}{}%
+\contentsline {section}{\numberline {5.5}Invariant subspaces on real vector spaces}{19}{}%
+\contentsline {chapter}{\numberline {6}Inner product spaces}{21}{}%
+\contentsline {section}{\numberline {6.1}Inner product}{21}{}%
+\contentsline {section}{\numberline {6.2}Norm}{22}{}%
+\contentsline {section}{\numberline {6.3}Orthonormal bases}{22}{}%
+\contentsline {section}{\numberline {6.4}Orthogonal projections and minimization problems}{22}{}%
+\contentsline {section}{\numberline {6.5}Linear functions and adjoints}{22}{}%
+\contentsline {chapter}{\numberline {7}Operators on inner product spaces}{23}{}%
+\contentsline {section}{\numberline {7.1}Self adjoint and normal operators}{23}{}%
+\contentsline {section}{\numberline {7.2}Spectral theorem}{23}{}%
+\contentsline {section}{\numberline {7.3}Normal operators on real inner product spaces}{23}{}%
+\contentsline {section}{\numberline {7.4}Positive operators}{23}{}%
+\contentsline {section}{\numberline {7.5}Isometries}{23}{}%
+\contentsline {section}{\numberline {7.6}Polar and singular value decompositions}{23}{}%
+\contentsline {chapter}{\numberline {8}Operators on complex vector spaces}{24}{}%
+\contentsline {chapter}{\numberline {9}Operators on real vector spaces}{25}{}%
+\contentsline {chapter}{\numberline {10}Trace and determinant}{26}{}%

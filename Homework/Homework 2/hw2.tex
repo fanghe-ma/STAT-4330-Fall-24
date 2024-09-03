@@ -1,0 +1,192 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[margin = 1in]{geometry}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{framed}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter:}{1em}{}
+
+
+\setlength{\parindent}{0em}
+\newcolumntype{L}{>{\arraybackslash}m{10cm}}
+\newcolumntype{T}{>{\arraybackslash}m{6cm}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead[HR]{STAT-4330 \\ Homework 2 }
+\fancyhead[HL]{Frank Ma}
+
+1. Let $A$ be the matrix
+\[
+  A = \begin{bmatrix} 
+     \dfrac{\strut 1}{\strut 2} & \dfrac{\strut 1}{\strut 2} \\
+     \dfrac{\strut 1}{\strut 3} & \dfrac{\strut 2}{\strut 3}
+  \end{bmatrix}
+\] 
+
+(a) Find the eigenvalues and eigenvectors for $A$. \\
+
+To find the eigenvalues
+\begin{align*}
+   det(A - \lambda I) &= 0 \\
+   det \left( 
+      \begin{bmatrix} 
+         \frac{1}{2} - \lambda & \frac{1}{2}   \\
+         \frac{1}{3} & \frac{2}{3} - \lambda
+      \end{bmatrix}
+   \right) &= 0 \\
+   \left( \frac{1}{2} - \lambda \right) \left( \frac{2}{3} - \lambda \right) - \frac{1}{6} &= 0 \\ 
+   6 \lambda^2 - 7\lambda + 1 &= 0 \\
+   (6 \lambda - 1)(\lambda - 1) &= 0 \\
+\end{align*}
+
+For $\lambda_1 = 1$ 
+\begin{align*}
+   \begin{bmatrix} 
+      \frac{1}{2} & \frac{1}{2} \\
+      \frac{1}{3} & \frac{2}{3} 
+   \end{bmatrix} \begin{pmatrix} a \\b  \end{pmatrix}  = \begin{pmatrix} a \\b \end{pmatrix}  \\ 
+      a &= b \\
+      v_1 = k \begin{pmatrix} 1 \\ 1 \end{pmatrix}  \text{ for any }k
+\end{align*}
+
+For $\lambda_2 = \frac{1}{6}$ 
+\begin{align*}
+   \begin{bmatrix} 
+      \frac{1}{2} & \frac{1}{2} \\
+      \frac{1}{3} & \frac{2}{3} 
+   \end{bmatrix} \begin{pmatrix} a \\b  \end{pmatrix}  = \frac{1}{6} \begin{pmatrix} a \\b \end{pmatrix}  \\ 
+      \frac{1}{2} a + \frac{1}{2} b &= \frac{1}{6}a \\
+      \frac{1}{3} a + \frac{2}{3} b &= \frac{1}{6} b \\
+      b = \frac{-2}{3} a\\
+      v_2 = k \begin{pmatrix} 1 \\ \frac{-2}{3} \end{pmatrix} \text{ for any $k$}
+\end{align*}
+
+(b) What is the determinant of $A$ \\
+
+\begin{align*}
+   det(A) = \frac{1}{3} - \frac{1}{6} = \frac{1}{6}
+\end{align*}
+
+(c) Let $D$ be a diagonalized matrix similar to $A$,
+ \[
+    D = \begin{bmatrix} 
+       1 & 0 \\
+       0 & \frac{1}{6}
+    \end{bmatrix}
+ \] 
+
+\begin{align*}
+   D &= P^{-1} A P \text{ where } P = \begin{bmatrix} 
+      1 & 1 \\ 1 & - \frac{2}{3}
+   \end{bmatrix} \\
+     &= \left( - \frac{3}{5} \right) \begin{bmatrix} 
+        - \frac{2}{3} & -1 \\ -1 & 1 
+     \end{bmatrix} \begin{bmatrix} 
+        \frac{1}{2} & \frac{1}{2} \\ \frac{1}{3}  & \frac{2}{3}
+     \end{bmatrix} \begin{bmatrix} 
+        1 & 1 \\ 1 & - \frac{2}{3}  
+     \end{bmatrix} \\
+     &= \left( - \frac{3}{5} \right)  \begin{bmatrix} 
+        - \frac{5}{3} & 0 \\ 0 & - \frac{5}{18}  
+     \end{bmatrix} \\
+     &= \begin{bmatrix} 
+        1 & 0 \\ 0 & \frac{1}{6}  
+     \end{bmatrix}
+\end{align*}
+
+An expression for $A$ is
+\[
+   A = PDP^{-1}
+\] 
+
+An expression for $A^n$ is
+ \begin{align*}
+    A^n &= \left( PDP^{-1} \right)^n \\
+        &= PDP^{-1} \cdot PDP^{-1} \hdots PDP^{-1} \\
+        &= PD^n P^{-1} \\
+        &= \begin{bmatrix} 
+           1 & 1 \\ 1 & - \frac{2}{3}
+        \end{bmatrix} \begin{bmatrix} 
+           1 & 0 \\ 0 & \left( \frac{1}{6} \right)^n
+        \end{bmatrix} \begin{bmatrix} 
+           - \frac{2}{3}   & -1 \\ -1 & 1
+        \end{bmatrix} \left( \frac{-3}{5} \right) 
+\end{align*}
+
+(d) Trace of $A$ is $ \frac{1}{2} + \frac{2}{3} = \frac{7}{6} $
+
+(e) The transpose of $A$ is 
+
+\[
+  A^T = \begin{bmatrix} 
+   \frac{\strut 1}{\strut 2} & \frac{\strut 1}{\strut 3}   \\ 
+   \frac{\strut 1}{\strut 2} & \frac{\strut 2}{\strut 3}
+\end{bmatrix}
+\] 
+
+The eigenvalues of $A^T$ are the roots to
+
+\begin{align*}
+   det \left( A^T - \lambda I \right)  &= 0 \\
+   \left| \begin{bmatrix} 
+      \frac{1}{2} - \lambda & \frac{1}{3} \\ \frac{1}{2} & \frac{2}{3} - \lambda  
+   \end{bmatrix}
+   \right|  &= 0 \\
+   \left( \frac{1}{2} - \lambda \right) \left( \frac{2}{3} - \lambda \right) - \frac{1}{6} &= 0 \\
+\end{align*}
+
+The eigenvalues are $\lambda_1 = 1$ and $\lambda_2 = \frac{1}{6}$. \\
+
+For $\lambda_1 = 1$, 
+
+\begin{align*}
+   \begin{bmatrix} 
+      \frac{1}{2} & \frac{1}{3} \\ \frac{1}{2} & \frac{2}{3}    
+      \end{bmatrix} \begin{pmatrix} a \\b \end{pmatrix}  &= \begin{pmatrix} a \\ b \end{pmatrix} 
+\end{align*}
+
+hence
+\begin{align*}
+      \frac{1}{2} a + \frac{1}{3}b = a \\
+      \frac{1}{2} a + \frac{2}{3} b = b \\
+      b &= \frac{3}{4}a 
+\end{align*}
+
+Therefore $v_1 = k \begin{pmatrix} 1 \\ \frac{3}{4} \end{pmatrix} $ for any $k$ \\
+
+For  $\lambda_2 = \frac{1}{6}$
+\begin{align*}
+   \begin{bmatrix} 
+      \frac{1}{2} & \frac{1}{3} \\ \frac{1}{2} & \frac{2}{3}    
+      \end{bmatrix} \begin{pmatrix} a \\b \end{pmatrix}  &= \frac{1}{6}\begin{pmatrix} a \\ b \end{pmatrix} 
+\end{align*}
+
+hence
+\begin{align*}
+      \frac{1}{2} a + \frac{1}{3}b = \frac{1}{6}a \\
+      \frac{1}{2} a + \frac{2}{3} b = \frac{1}{6}b \\
+      b &= -a
+\end{align*}
+
+Therefore $v_2 = k \begin{pmatrix} 1 \\ -1 \end{pmatrix} $ for any $k$ \\
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
