@@ -1,0 +1,105 @@
+\chapter{}
+
+\section{Motivating example}
+
+Imagine counting votes in $n$ people, $p$ say yes, $q$ say no. \\
+\[
+  n = p + q
+\] 
+
+Define $x$ to be 
+\[
+  x = p - q
+\] 
+
+Setting $n = 8$, $p = 5$,  $q = 3$,  $x = 2$.  \\
+
+Imagine taking the votes one by one and plotting  $x$ against time $t$. The ending point is at $(8, 2)$ (i.e.  $t = 8, x = 2$). \\
+
+How many paths are there? \\
+\[
+   \begin{pmatrix} 8 \\ 3 \end{pmatrix} \text{ or } \begin{pmatrix} 8 \\ 5 \end{pmatrix}  \text{ or }  \frac{8!}{5!3!}
+\] 
+
+In general, the number of paths from $(0, 0)$ to $(n, x)$ is 
+\[
+N_{n, x} = \begin{pmatrix} n \\ p \end{pmatrix}  = \begin{pmatrix}  n \\ q \end{pmatrix}  = \begin{pmatrix}  p + q \\ q \end{pmatrix}  = \begin{pmatrix} n \\ \frac{n + x}{2} \end{pmatrix} = \begin{pmatrix}  n \\ \frac{ n - x}{ 2} \end{pmatrix}  
+\] 
+
+\textcolor{red}{How many paths ending in $(n, x)$ are always positive?}. \\
+
+At the first step, the path can only go up, ie $(0, 0) \rightarrow (1, 1)$. \\
+
+Let us denote the number of paths from  $(0, 0)$ to $(n, x)$ as $N_{n, x}$. \\
+
+We try to count the number of paths from $(1, 1)$ to $(n, x)$, i.e.  $N_{n-1, x-1}$ 
+\[
+   N_{n-1, x-1} = \begin{pmatrix} p + q - 1 \\ p - 1 \end{pmatrix} 
+\] 
+
+This is the same as saying we have $n - 1 = p + q - 1$ decisions to make, and $p - 1$ of them are going up. \\ 
+
+Of $N_{n -1, x-1}$, we want to know how many paths crosses the horizontal axis. \\
+
+By the \textcolor{red}{Reflection Principle}, there is a one-to-one mapping of \textcolor{blue}{paths from $(1, 1)$ to $(n, x)$ that cross the axis}  to \textcolor{blue}{paths from $(1, -1)$ to  $(n, x)$}. This number is 
+\[
+   N_{n -1, x + 1} = \begin{pmatrix}  p + q -1 \\ p \end{pmatrix} 
+\] 
+
+\textcolor{red}{Note}: we use $p + q - 1$ choose \textcolor{red}{$p$} because to get to  $(1, -1)$ from $(0, 0)$, we used a 'no' vote, but we still have $p$ 'yes' votes.
+
+The final answer is 
+\[
+   N_{n -1, x - 1} - N_{n -1, x + 1}
+\] 
+
+\section{Extending from the previous example}
+Let $X_1, \hdots, X_{2n}$ be iid RV where 
+\[
+  P(X_i = 1) = P(X_i = -1) = \frac{1}{2}
+\] 
+
+Let $S_0 = 0$, and
+\[
+   S_k = \sum_{i = 1}^{k} X_i \text{ for } k = 1, \hdots, 2n
+\] 
+
+How would we find
+\[
+   P(S_1 > 0, S_2 > 0, \hdots, S_{2n} > 0)
+\] 
+
+Consider $S_{2n}$, the possible values for $S_{2n}$ are $\{ -2n, \hdots, -4, -2, 0, 2, 4, \hdots 2n \} $ \\
+
+We can first find
+\[
+   P(S_1 > 0, S_2 > 0, \hdots, S_{2n} = 2r ) \text{ where } r = 1, 2, 3, \hdots, n
+\] 
+
+This is equivalent to looking for a path from $(0, 0) $ to $(2n, 2r)$ that stays above the axis. The number of paths is
+\[
+   N_{2n -1, 2r -1} - N_{2n - 1, 2r + 1}
+\] 
+
+The probability of getting any single path is
+\[
+   \left( \frac{1}{2}\right)^{2n}
+\] 
+
+The required probability is
+\[
+   P(S_1 > 0, S_2 > 0, \hdots, S_{2n} = 2r ) = \left( N_{2n -1, 2r -1} - N_{2n - 1, 2r + 1} \right) \left( \frac{1}{2} \right)^{2n}
+\] 
+
+To answer the initial question
+\begin{align*}
+   & P(S_1 > 0, S_2 > 0, \hdots, S_{2n} > 0)  \\
+   =&  \sum_{r = 1}^{n} P(S_1 > 0, S_2 > 0, \hdots, S_{2n} = 2r )  \\
+   =& \sum_{r = 1}^n \left( N_{2n -1, 2r -1} - N_{2n - 1, 2r + 1} \right) \left( \frac{1}{2} \right)^{2n} \\
+   =& \left( \frac{1}{2} \right)^{2n} \sum_{r = 1}^n \left( N_{2n -1, 2r -1} - N_{2n - 1, 2r + 1} \right) \\ 
+   =& \left( \frac{1}{2} \right)^{2n} \left( N_{2n -1, 1} - N_{2n -1, 3}  + N_{2n -1, 3} + N_{2n -1, 5} + \hdots + N_{2n -1, 2n -1} - N_{2n - 1, 2n + 1}\right) \\ 
+   =& \left( \frac{1}{2} \right)^{2n} \left( N_{2n -1, 1} - N_{2n -1, 2n + 1}\right)  \\
+   =& \left( \frac{1}{2} \right)^{2n} \left( N_{2n -1, 1} - 0 \right) \text{ since there are $0$ ways to get to $2n + 1$ with $2n - 1$ steps}\\
+   =& N_{2n - 1, 1} \left( \frac{1}{2} \right)^{2n}
+\end{align*}
+
